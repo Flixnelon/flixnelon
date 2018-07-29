@@ -28,28 +28,50 @@
 
     <div class="content">
 
-        <div>
-            <button class="my-btn my-btn-pink">Pink filled button</button>
-            <button class="my-btn pink-outline">Pink outline button</button>
-        </div>
+        <div style="display:inline-block">
 
-        <div>
-            <button class="my-btn my-btn-blue">Blue filled button</button>
-            <button class="my-btn blue-outline">Blue outline button</button>
-        </div>
+            <div class="table-container">
+                <table class="my-table">
+                    <tr>
+                        <th>
+                            Numbers
+                        </th>
+                        <th>
+                            Stars
+                        </th>
+                    </tr>
+                    <tr>
+                        <td name="numbers">
+                            1 2 3 4 5
+                        </td>
+                        <td name="stars">
+                            1 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td name="numbers">
+                            1 2 3 4 5
+                        </td>
+                        <td name="stars">
+                            1 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td name="numbers">
+                            1 2 3 4 5
+                        </td>
+                        <td name="stars">
+                            1 2
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-        <div>
-            <button class="my-btn my-btn-green">Green filled button</button>
-            <button class="my-btn green-outline">Green outline button</button>
-        </div>
+            <div>
+                <button type=submit onclick="generateNumbers()" class="my-btn my-btn-orange icon refresh" style="width:49%">Generate</button>
+                <button type=submit onclick="orderNumbers()" class="my-btn my-btn-orange icon sort" style="width:49%;">Order</button>
+            </div>
 
-        <div>
-            <button class="my-btn my-btn-orange">Orange filled button</button>
-            <button class="my-btn orange-outline">Orange outline button</button>
-        </div>
-
-        <div style="display:none;"> 
-                <button class="my-round-btn"></button>
         </div>
 
     </div>

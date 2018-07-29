@@ -1,5 +1,6 @@
 body {
-    background-color:lightcyan;
+    /*background-color:lightcyan;*/
+    background-color:white;
     font-family: 'Roboto', sans-serif;
     margin: 0px;
 }
@@ -55,6 +56,14 @@ input, button {
     content:'\f128';
 }
 
+.refresh::before {
+    content:'\f2f1';
+}
+
+.sort::before{
+    content:'\f162';
+}
+
 .divider {
     width:2px;
     height:30px;
@@ -62,6 +71,45 @@ input, button {
     margin:0px 10px;
     display: inline-block;
     background-color:  #28abd6;
+}
+
+.table-container {
+    background-color:#f4f4f4;
+    padding:10px;
+}
+
+.my-table{
+    border:1px solid rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.my-table th,
+.my-table td{
+    padding:2px 10px;
+}
+
+td[name="stars"]{
+    width:60px;
+}
+
+td[name="numbers"]{
+    width:140px;
+}
+
+.my-table tr:hover td{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.my-table tr:nth-child(even){   
+    background-color:lightcyan;
+}
+
+.my-table tr:nth-child(odd){   
+    background-color: lightblue;
+}
+
+.btn-container {
+    margin: 0px 10px;
 }
 
 .my-btn {
