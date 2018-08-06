@@ -73,6 +73,11 @@ input, button {
     background-color:  #28abd6;
 }
 
+.my-container {
+    background-color: #e9ecef;
+    padding:10px;
+}
+
 .table-container {
     background-color:#f4f4f4;
     padding:10px;

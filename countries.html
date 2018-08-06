@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/countries.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+
+    <title>Something</title>
+</head>
+
+<body>
+
+    <div class="menu">
+
+        <a href="index.html" class="option icon home">Home</a>
+        <span class="divider"></span>
+        <a href="buttons.html" class="option icon list">Buttons</a>
+        <span class="divider"></span>
+        <a href="faq.html" class="option icon questions">FAQ</a>
+        <span class="divider"></span>
+        <a href="countries.html" class="option icon fa-gamepad">Game</a>
+
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="pt-2">
+            <button type="button" id="startEurope" class="btn btn-info" onclick="startGame()">Start Jogo Europa</button>
+        </div>
+        <!--<table class="table d-none" id="tableEurope">
+            <tr>
+                <th>Country</th>
+                <th>Capital</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td id="random_country"></td>
+                <td>
+                    <input type="text" class="form-control" id="capital_input" style="width:180px" maxlength=18>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="checkAnswer()">Check Answer</button>
+                </td>
+                <td></td>
+            </tr>
+        </table>-->
+        <div id="tableEurope" class="d-none">
+            <div class="my-container">
+                <div class="h5 font-weight-bold">País</div>
+                <div id="random_country"></div>
+                <br/>
+                <div class="h6 font-weight-bold">Capital</div>
+                <input type="text" class="form-control mt-2" id="capital_input" style="width:180px" maxlength=18>
+                <div id="resultEurope" style="padding-top: 10px; height: 34px;"></div>
+            </div>
+            <button type="button" class="btn btn-success mt-2" onclick="checkAnswer()">Verificar</button>
+            <button type="button" class="btn btn-danger mt-2" onclick="skipStep()">Saltar</button>
+            <button type="button" class="btn btn-info mt-2" onclick="giveHelp()">Ajuda</button>
+
+        </div>
+    </div>
+</body>
+
+</html>
