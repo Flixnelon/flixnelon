@@ -5,13 +5,13 @@ $(document).ready(function () {
             checkAnswer();
         }
     });
-/*
-    $('#capital_input').popover({
-        content: '<i class="fa fa-times"></i>',
-        html: true,
-        placement: 'right'
-    });
-*/
+    /*
+        $('#capital_input').popover({
+            content: '<i class="fa fa-times"></i>',
+            html: true,
+            placement: 'right'
+        });
+    */
 });
 
 var _europe = {
@@ -19,7 +19,7 @@ var _europe = {
     "Albânia": "tirana",
     "Alemanha": "berlim",
     "Andorra": "andorra a velha",
-    "Armênia": "ereva",
+    "Arménia": "ereva",
     "Áustria": "viena",
     "Azerbaijão": "baku",
     "Bielorússia": "minsk",
@@ -87,10 +87,16 @@ function startGame() {
 function nextStep() {
 
     if (europe.length == 0) {
-        
-        $("#random_country").html("");
-        $("#resultEurope").html("You got " + hits + " <span class=\"text-success\">right</span> and you <span class=\"text-danger\">skipped</span> " + skips + ".");
 
+        $("#help").addClass("disabled");
+        $("#help").prop("disabled", "disabled");
+        $("#check").addClass("disabled");
+        $("#check").prop("disabled", "disabled");
+        $("#skip").addClass("disabled");
+        $("#skip").prop("disabled", "disabled");
+        $("#random_country").html("");
+        $("#resultEurope").html("Acertaste em <span class=\"text-success\">" + hits + "</span> e saltaste <span class=\"text-danger\"> " + skips + "</span>.");
+       
     } else {
 
         helpGiven = false;
@@ -117,11 +123,11 @@ function skipStep() {
 function checkAnswer() {
 
     var input = $("#capital_input").val();
-    
-    if (input.startsWith(" ")){
+
+    if (input.startsWith(" ")) {
         input = input.substr(1);
     }
-    if (input.endsWith(" ")){
+    if (input.endsWith(" ")) {
         input = input.substring(0, input.length() - 1);
     }
 
@@ -151,7 +157,7 @@ function giveHelp() {
     var numToGive;
     var i;
 
-    if (!helpGiven) {
+    if (!helpGiven && !finished) {
         for (i = 0; i < _europe[curr_country].length; i++) {
             chars.push("_");
         }
