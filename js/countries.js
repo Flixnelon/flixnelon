@@ -1,9 +1,17 @@
 $(document).ready(function () {
+
     $("#capital_input").on('keydown', function (e) {
         if (e.keyCode == 13) {
             checkAnswer();
         }
     });
+/*
+    $('#capital_input').popover({
+        content: '<i class="fa fa-times"></i>',
+        html: true,
+        placement: 'right'
+    });
+*/
 });
 
 var _europe = {
@@ -43,7 +51,7 @@ var _europe = {
     "Mónaco": "cidade de monaco",
     "Montenegro": "podgorica",
     "Noruega": "oslo",
-    "Países Baixos": "Amesterdão",
+    "Países Baixos": "amesterdao",
     "Polónia": "varsovia",
     "Portugal": "lisboa",
     "Reino Unido": "londres",
@@ -63,6 +71,7 @@ var europe;
 var curr_country;
 var skips;
 var hits;
+var popoverTimeout;
 var helpGiven;
 
 function startGame() {
@@ -89,8 +98,8 @@ function nextStep() {
 
         curr_country = europe[rdm_i];
 
-        document.getElementById("random_country").innerHTML = curr_country;
-        document.getElementById("capital_input").value = "";
+        $("#random_country").html(curr_country);
+        $("#capital_input").val('');
 
         // unica maneira decente de avançar com esta merda
         europe.splice(rdm_i, 1);
@@ -106,14 +115,24 @@ function skipStep() {
 
 function checkAnswer() {
 
-    var input = document.getElementById("capital_input").value;
+    var input = $("#capital_input").val();
     input = input.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
     if (input.toLowerCase() == _europe[curr_country]) {
+
         hits++;
         nextStep();
+
+    } else {
+
+        $("#capital_input").popover('show');
+        clearTimeout(popoverTimeout);
+        popoverTimeout = setTimeout(hidePop, 2000);
+
     }
-    // else ignore
+}
+function hidePop() {
+    $('#capital_input').popover('hide');
 }
 
 function giveHelp() {
@@ -139,7 +158,10 @@ function giveHelp() {
         }
 
         for (i = 0; i < chars.length; i++) {
-            hint += chars[i] + " ";
+            if (i == chars.length - 1)
+                hint += chars[i];
+            else
+                hint += chars[i] + " ";
         }
 
         $("#resultEurope").text(hint.charAt(0).toUpperCase() + hint.slice(1));

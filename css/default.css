@@ -9,8 +9,12 @@ input, button {
     font-family: 'Roboto', sans-serif;
 }
 
-.content {
-    margin:8px;
+.popover-body {
+    background:#ffa3a3;
+}
+
+.bs-popover-right .arrow::after {
+    border-right-color:#ffa3a3 !important;
 }
 
 .menu {
@@ -36,32 +40,6 @@ input, button {
 .option:hover {
     text-decoration:none;
     color:white;
-}
-
-.icon::before{    
-    font-family: 'Font Awesome\ 5 Free';
-    padding-right:4px;
-    font-weight: 900;
-}
-
-.home::before {
-    content:'\f015';
-}
-
-.list::before {
-    content:'\f03a';
-}
-
-.questions::before {
-    content:'\f128';
-}
-
-.refresh::before {
-    content:'\f2f1';
-}
-
-.sort::before{
-    content:'\f162';
 }
 
 .divider {
