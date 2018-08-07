@@ -22,7 +22,7 @@ var _europe = {
     "Armênia": "ereva",
     "Áustria": "viena",
     "Azerbaijão": "baku",
-    "Albânia": "minsk",
+    "Bielorússia": "minsk",
     "Bélgica": "bruxelas",
     "Bósnia-Herzegovina": "saravejo",
     "Bulgária": "sofia",
@@ -30,9 +30,9 @@ var _europe = {
     "Chipre": "nicosia",
     "Dinamarca": "copenhaga",
     "Eslováquia": "bratislava",
-    "Eslovênia": "liubliana",
+    "Eslovénia": "liubliana",
     "Espanha": "madrid",
-    "Albânia": "tallinn",
+    "Estónia": "tallinn",
     "Finlândia": "helsinquia",
     "França": "paris",
     "Grécia": "atenas",
@@ -45,10 +45,10 @@ var _europe = {
     "Liechtenstein": "vaduz",
     "Lituânia": "vilnius",
     "Luxemburgo": "luxemburgo",
-    "República da Macedônia": "skopje",
+    "República da Macedónia": "escopia",
     "Malta": "valetta",
     "Moldávia": "chisinau",
-    "Mónaco": "cidade de monaco",
+    "Mónaco": "cidade do monaco",
     "Montenegro": "podgorica",
     "Noruega": "oslo",
     "Países Baixos": "amesterdao",
@@ -87,7 +87,8 @@ function startGame() {
 function nextStep() {
 
     if (europe.length == 0) {
-
+        
+        $("#random_country").html("");
         $("#resultEurope").html("You got " + hits + " <span class=\"text-success\">right</span> and you <span class=\"text-danger\">skipped</span> " + skips + ".");
 
     } else {
@@ -116,7 +117,15 @@ function skipStep() {
 function checkAnswer() {
 
     var input = $("#capital_input").val();
-    input = input.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    
+    if (input.startsWith(" ")){
+        input = input.substr(1);
+    }
+    if (input.endsWith(" ")){
+        input = input.substring(0, input.length() - 1);
+    }
+
+    input = input.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace("-", " ");
 
     if (input.toLowerCase() == _europe[curr_country]) {
 
