@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/default.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
@@ -19,21 +20,32 @@
 
 <body>
 
-    <div class="menu">
-
-        <a href="index.html" class="option">
-            <i class="fa fa-home"></i>&nbsp;Home</a>
-        <span class="divider"></span>
-        <a href="buttons.html" class="option">
-            <i class="fa fa-list"></i>&nbsp;Buttons</a>
-        <span class="divider"></span>
-        <a href="faq.html" class="option">
-            <i class="fa fa-question"></i>&nbsp;FAQ</a>
-        <span class="divider"></span>
-        <a href="countries.html" class="option">
-            <i class="fa fa-gamepad"></i>&nbsp;Game</a>
-
-    </div>
+    <nav id="navbar-menu" class="navbar navbar-expand-sm my-bg-blue fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar" aria-controls="my-navbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="fa fa-bars black-text"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="my-navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a id="black-text" class="nav-link" href="index.html">
+                        <i class="fa fa-home"></i>&nbsp;Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="black-text" class="nav-link black-text" href="buttons.html">
+                        <i class="fa fa-list"></i>&nbsp;Buttons</a>
+                </li>
+                <li class="nav-item">
+                    <a id="black-text" class="nav-link black-text" href="faq.html">
+                        <i class="fa fa-question"></i>&nbsp;FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a id="black-text" class="nav-link black-text" href="countries.html">
+                        <i class="fa fa-gamepad"></i>&nbsp;Game</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container-fluid pt-3">
 

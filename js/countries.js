@@ -94,7 +94,7 @@ function nextStep() {
         $("#check").prop("disabled", "disabled");
         $("#skip").addClass("disabled");
         $("#skip").prop("disabled", "disabled");
-        $("#random_country").html("");
+        $("#random_country").html("&nbsp;");
         $("#resultEurope").html("Acertaste em <span class=\"text-success\">" + hits + "</span> e saltaste <span class=\"text-danger\"> " + skips + "</span>.");
        
     } else {
@@ -111,7 +111,7 @@ function nextStep() {
         // unica maneira decente de avançar com esta merda
         europe.splice(rdm_i, 1);
 
-        $("#resultEurope").text("");
+        $("#resultEurope").html("&nbsp;");
     }
 }
 
@@ -157,7 +157,7 @@ function giveHelp() {
     var numToGive;
     var i;
 
-    if (!helpGiven && !finished) {
+    if (!helpGiven) {
         for (i = 0; i < _europe[curr_country].length; i++) {
             chars.push("_");
         }

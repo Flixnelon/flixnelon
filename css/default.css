@@ -2,7 +2,7 @@ body {
     /*background-color:lightcyan;*/
     background-color:white;
     font-family: 'Roboto', sans-serif;
-    margin: 0px;
+    padding-top: 50px;
 }
 
 input, button {
@@ -17,29 +17,22 @@ input, button {
     border-right-color:#ffa3a3 !important;
 }
 
-.menu {
+.my-bg-blue {
     background:#6fceed;
-    display:inline-block;
-    width:100%;
-    padding:0px 10px;
     border-bottom:3px solid #28abd6;
 }
 
-.option {
-    text-decoration:none;
-    line-height: 44px;
-    text-transform: uppercase;
-    color:black;
-    font-weight: bold;
+#navbar-menu {
+    padding: 0rem 0.5em;
 }
 
-.option:visited {
-    color: black;
+#navbar-menu .navbar-toggler{
+    outline:none;
 }
 
-.option:hover {
-    text-decoration:none;
-    color:white;
+.navbar-toggler .fa-bars {
+    padding: 5px 0px;
+    border:none;
 }
 
 .divider {
@@ -53,7 +46,18 @@ input, button {
 
 .my-container {
     background-color: #e9ecef;
-    padding:10px;
+    padding: 10px;
+}
+
+#black-text {
+    text-transform: uppercase;
+    color:black;
+    font-weight: bold;
+}
+
+#black-text:hover {
+    text-decoration:none;
+    color:white;
 }
 
 .table-container {
