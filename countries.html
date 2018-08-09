@@ -48,22 +48,25 @@
 
     <div class="container-fluid">
 
-        <div class="pt-2">
-            <button type="button" id="startEurope" class="btn btn-info" onclick="startGame()">Start Jogo Europa</button>
+        <div id="startGame" class="pt-2">
+            <button type="button" name="EU" class="btn btn-info" onclick="startGame(this.name)">Europa</button>
+            <button type="button" name="CNA" class="btn btn-info" onclick="startGame(this.name)">América Central e do Norte</button>
         </div>
-        <div id="tableEurope" class="d-none">
+        <div id="table" class="d-none">
             <div class="my-container">
                 <div class="h5 font-weight-bold">País</div>
                 <div id="random_country"></div>
                 <br/>
                 <div class="h6 font-weight-bold">Capital</div>
                 <input id="capital_input" type="text" class="form-control mt-2" style="width:180px" maxlength=20>
-                <div id="resultEurope" class="pt-2"></div>
+                <div id="result" class="pt-2"></div>
             </div>
             <button type="button" id="check" class="btn btn-success mt-2" onclick="checkAnswer()">Verificar</button>
             <button type="button" id="skip" class="btn btn-danger mt-2" onclick="skipStep()">Saltar</button>
             <button type="button" id="help" class="btn btn-info mt-2" onclick="giveHelp()">Ajuda</button>
-
+            <div>
+                <button type="button" id="restart" class="btn btn-primary mt-2 d-none" onclick="restartGame()">Reiniciar</button>
+            </div>
         </div>
     </div>
 </body>

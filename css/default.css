@@ -22,6 +22,32 @@ input, button {
     border-bottom:3px solid #28abd6;
 }
 
+.gameEurope {
+    background-image: url(https://cdn.pixabay.com/photo/2014/04/02/10/57/europe-305055__340.png);
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+}
+
+.gameCNA {
+    background-image: url(http://www.hamonusa.com/sites/default/files/inline-images/NAmap_0.png);
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+}
+
+@media screen and (max-width: 430px){
+    .gameEurope{
+        background-image:  none;
+    }
+    .gameCNA {
+        background-image: none;
+    }
+
+}
+
 #navbar-menu {
     padding: 0rem 0.5em;
 }
